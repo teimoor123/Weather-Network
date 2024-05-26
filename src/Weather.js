@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css'; // Ensure CSS file is imported
+
 const Weather = () => {
   const [weather, setWeather] = useState(null);
   const apiKey = 'a457c6861e66605682b30bc5b79b865c'  ; 
@@ -25,7 +27,7 @@ const Weather = () => {
 
   if (!weather) 
     return (
-        <div>
+        <div className="weather-container">
         <form onSubmit={handleSubmit}>
             <input
             type="text"
@@ -33,7 +35,7 @@ const Weather = () => {
             onChange={(e) => setnewCity(e.target.value)}
             placeholder="Enter city name"
             />
-            <button type="submit">Get Weather</button>
+            <button className="weather-button" type="submit">Get Weather</button>
         </form>
         <p>Invalid city input!</p>
         
@@ -42,19 +44,19 @@ const Weather = () => {
 
   else
     return (
-        <div>
-        <h1>My Weather Network</h1>
-        <form onSubmit={handleSubmit}>
+        <div className="weather-container">
+        <form className="weather-form" onSubmit={handleSubmit}>
             <input
             type="text"
+            className="weather-input"
             value={newCity}
             onChange={(e) => setnewCity(e.target.value)}
             placeholder="Enter city name"
             />
-            <button type="submit">Get Weather</button>
+            <button className="weather-button" type="submit">Get Weather</button>
         </form>
         
-        <h2>Weather in {city}</h2>
+        <h2 className="weather-h2" >Weather in {city}</h2>
         <p>Temperature: {weather.main.temp}°C</p>
         <p>Condition: {weather.weather[0].main}</p>
         
