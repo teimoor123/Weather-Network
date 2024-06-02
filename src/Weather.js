@@ -24,11 +24,32 @@ const Weather = ({ city }) => {
     return <p>Invalid city input!</p>;
   }
 
+  const { main, weather: weatherDetails, wind, clouds, sys, visibility, coord } = weather;
+
+
   return (
-    <div className="weather-container">
-      <h2>Weather in {city}</h2>
-      <p>Temperature: {weather.main.temp}°C</p>
-      <p>Condition: {weather.weather[0].main}</p>
+    <div className="result">
+      <div className="updateTime">
+        <p>Last updated {new Date(weather.dt * 1000).toLocaleString()}</p>
+      </div>
+      <div className="weather-container">
+        <h1>{city}</h1>
+        <h2>{weather.main.temp}°C</h2>
+        <p>Feels Like: {weather.main.feels_like}°C</p>
+        <p>Min Temperature: {weather.main.temp_min}°C</p>
+        <p>Max Temperature: {weather.main.temp_max}°C</p>
+        <p>Condition: {weather.weather[0].main}</p>
+        <p>Description: {weather.weather[0].description}</p>
+        <p>Humidity: {weather.main.humidity}%</p>
+        <p>Pressure: {weather.main.pressure} hPa</p>
+        <p>Visibility: {weather.visibility / 1000} km</p>
+        <p>Wind Speed: {weather.wind.speed} m/s</p>
+        <p>Wind Direction: {weather.wind.deg}°</p>
+        <p>Cloudiness: {weather.clouds.all}%</p>
+        <p>Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}</p>
+        <p>Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}</p>
+        <p>Coordinates: {weather.coord.lat}, {weather.coord.lon}</p>
+      </div>
     </div>
   );
 };

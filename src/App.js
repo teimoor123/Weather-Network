@@ -32,9 +32,9 @@ function App() {
         </form>
         </div>
       </div>
-      <header className="App-header">
+      <div className="App-header">
         <Weather city={city} />
-      </header>
+      </div>
     </div>
   );
 }
