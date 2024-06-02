@@ -80,6 +80,20 @@
   margin: 0 auto;
 }
 
+.weather-main {
+  display: flex;
+  justify-content: space-between;  
+
+}
+
+.weather-header {
+  text-align: left;
+}
+
+.weather-city {
+  font-size: 70px;
+}
+
 .weather-form {
   margin-right: 0;
 
