@@ -94,6 +94,18 @@
   font-size: 70px;
 }
 
+.weather-temp {
+  font-size: 60px;
+  color: yellow;
+}
+
+.weather-sun {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: yellow;
+}
+
 .weather-form {
   margin-right: 0;
 
@@ -133,4 +145,12 @@
 h1, h2, h3, h4, h5, h6, body {
   margin: 0;
   padding: 0;
+}
+
+.transparent-hr {
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.2); /* Adjust the color and opacity here */
+  margin: 10px 2; /* Optional: Adjust the spacing around the <hr> element */
+  width: 300px;
+  
 }
